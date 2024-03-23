@@ -2,24 +2,49 @@ class LeitorArquivo:
 
     def __init__(self, nomeArquivo):
         self.nomeArquivo = nomeArquivo
+        self.conjuntoEstados = None
+        self.alfabeto = None
+        self.transicoes = None
+        self.estadoInicial= None
+        self.estadosFinais = None
+        self.palavras = None
 
     def lerArquivo(self):
         with open(self.nomeArquivo, 'r') as arquivo:
             #Lendo e divide as entradas do arquivo
-            conjuntoEstados = arquivo.readline().strip().split(', ') 
-            alfabeto = arquivo.readline().strip().split(', ')  
+            self.conjuntoEstados = arquivo.readline().strip().split(', ') 
+            self.alfabeto = arquivo.readline().strip().split(', ')  
 
-            transicoes = []
+            self.transicoes = []
             formatoTransicoes = arquivo.readline().strip().split(' - ')
             for transicao in formatoTransicoes:
                 transicao = tuple(transicao.strip('()').split(', '))
-                transicoes.append(transicao)
+                self.transicoes.append(transicao)
 
-            estadoInicial = arquivo.readline().strip()
-            estadosFinais = set(arquivo.readline().strip().split(', '))
-            numeroPalavras = int(arquivo.readline().strip())
-            palavras = [linha.strip() for linha in arquivo.readlines()]
+            self.estadoInicial = arquivo.readline().strip()
+            self.estadosFinais = set(arquivo.readline().strip().split(', '))
 
-        return conjuntoEstados, alfabeto, transicoes, estadoInicial, estadosFinais, numeroPalavras, palavras
+            self.palavras = [linha.strip() for linha in arquivo.readlines()]
+
+
+    def getConjuntoEstados(self):
+        return self.conjuntoEstados
+
+    def getAlfabeto(self):
+        return self.alfabeto
+    
+    def getTransicoes(self):
+        return self.transicoes
+    
+    def getEstadoInicial(self):
+        return self.estadoInicial
+    
+    def getEstadosFinais(self):
+        return self.estadosFinais
+    
+    def getPalavras(self):
+        return self.palavras
+
+       
 
 
