@@ -1,7 +1,7 @@
 from leituraArquivos import LeitorArquivo
 from afd import AFD
 
-nomeArquivo = input("Digite o nome do arquivo para teste: /'entrada.txt' ")
+nomeArquivo = input("Digite o nome do arquivo para teste (entrada.txt): ")
 diretorio = f'testes/{nomeArquivo}'
 
 iniciar = LeitorArquivo(diretorio)
@@ -20,4 +20,7 @@ palavras = iniciar.getPalavras()
 
 for palavra in palavras:
     resultado = automato.ehValida(palavra)
-    print(resultado)
+    if resultado == True:
+        print(f"Palavra: {palavra} aceita" )
+    else:
+        print(f"Palavra: {palavra} rejeitada" )

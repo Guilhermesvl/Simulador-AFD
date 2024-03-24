@@ -19,9 +19,7 @@ class AFD:
 
             if transicaoExiste == False:
                 return False
-                #return f'Palavra: {palavra} rejeitadinhar'
-          
-                #return f"Palavra: {palavra} aceita")
+                
                 
         return estadoAtual in self.estadosFinais
-        # return f"Palavra: {palavra} rejeitaduxa")   
+           
