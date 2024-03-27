@@ -40,9 +40,9 @@ Os alunos devem implementar um AFD genérico que receba os cinco elementos menci
  ## Como usar: 
 
  - Compile o arquivo `main.py`;
- - Digite o nome do arquivo que deseja testar. \<nome do arquivo\>**.txt**
+ 
+ - No terminal, digite o nome do arquivo que deseja testar. \<nome do arquivo\>**.txt**
         
-        
-    
 - A saída do programa será "aceita" ou "rejeitada", para as palavras usadas no teste.
+  
 
